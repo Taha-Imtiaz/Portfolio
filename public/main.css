@@ -1,0 +1,996 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+body
+{
+  
+    overflow-x: hidden;
+}
+html
+{
+    font-size: 62.5%;
+}
+/* .loader
+{
+    background:#fff;
+    width: 100%;
+    height: 100%;
+    visibility: hidden; 
+ } 
+.spin
+{
+    width: 256px;
+    height: 256px;
+    border-radius: 50%;
+     background: red; 
+    position: absolute;
+    top: 40%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0 auto;
+    z-index: 1000;
+    border-top: 10px solid #eee;
+    animation: spinning 10s linear infinite forwards;
+} 
+@keyframes spinning
+{
+    0%
+    {
+        transform: rotate(0deg);
+    }
+    100%
+    {
+        transform: rotate(360deg);
+    }
+}
+#spin2
+{
+    width: 200px;
+    height: 200px;
+    border-top: 10px dotted #fff;
+    top: 45%;
+}
+#spin3
+{
+    width: 120px;
+    height: 120px;
+     border-top: 10px dotted #fff; 
+    top: 50%;
+    background: #fff;
+    animation: colourful  20s infinite linear forwards;
+
+}
+@keyframes colourful
+{
+    0%
+    {
+        background: rgb(221, 22, 22);
+    }
+    25%
+    {
+        background: rgb(209, 59, 4)
+    }
+    50%
+    {
+        background: green;
+    }
+    75%
+    {
+        background: deepskyblue;
+    }
+    100%
+    {
+        background: rgb(240, 176, 14);
+    }
+}
+.wait
+{
+    top: 85%;
+    position: absolute;
+    z-index: 40; 
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0 auto;
+    text-align: center;
+     color: #fff; 
+    font-size: 2rem;
+    font-family: 'Roboto Condensed', sans-serif;
+}*/
+.container
+{
+  
+   
+    display: grid;
+   
+    grid-template-rows:minmax(5rem,10vh)  minmax(90vh,min-content)  repeat(3,min-content) minmax(70vw,min-content) minmax(40vw,min-content) minmax(18vw,min-content);
+    grid-template-columns: minmax(0rem,1fr) repeat(4,minmax(25rem,min-content )) minmax(0rem,1fr) ;
+    grid-template-areas: "navbar navbar navbar navbar navbar navbar "
+                            "home home home home home home " 
+                             "about about about about about about  "
+                            "img img img skills skills skills"
+                        
+                        "projects projects projects projects projects projects "
+                        "education education education education education education"
+                        "contact contact contact contact contact contact "
+                        "footer footer footer footer footer footer"
+                        
+    
+/* position: relative; */
+}
+.flex
+{
+     display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+}
+.navbar
+{
+    grid-area: navbar;
+    background: rgba(70, 67, 67, 0.95);
+    grid-template-columns: 8fr 36fr repeat(6,8fr) 8fr;
+    grid-template-areas: ". Mine Home About Skills Education Portfolio  Contact . ";
+    display: grid;
+   color: rgba(255, 255, 255, 0.8);
+   font-family: 'Roboto Condensed', sans-serif;
+    font-size: 1.5rem;
+    /* position: sticky;
+    top: 0; */
+    
+}
+.Mine
+{
+    grid-area: Mine;
+    font-size: 2.2rem;
+}
+ a
+{
+    text-decoration: none;
+    color: white;
+}
+
+.navbar a:hover
+{
+    color: black;
+    background: white;
+    font-size: 2rem;
+    border: 2px solid black;
+    border-radius: 0.1rem;
+    transform: translateY(-0.5rem)
+}
+.Home
+{
+    grid-area: Home;
+    
+}
+.Skills
+{
+    grid-area: Skills;
+    
+}
+.Education
+{
+    grid-area: Education;
+   
+}
+.About
+{
+    grid-area: About;
+}
+.Portfolio
+{
+    grid-area: Portfolio;
+}
+.Contact
+{
+    grid-area: Contact;
+}
+.home
+{
+    background: url('bg.jpg');
+    background-size: 100% 100%,cover;
+    /* font-size: 2.5rem; */
+    font-family: 'Roboto Condensed', sans-serif;
+    grid-area: home;
+
+   
+}
+
+.intro
+{
+    color: whitesmoke;
+    margin-bottom: 3rem;
+    font-size: 4rem;
+    line-height: 5rem;
+}
+.intro span
+{
+    /* font-size: 4.2rem; */
+    color: deeppink;
+    letter-spacing: 0.7rem;
+    /* position: relative; */
+   
+}
+
+.home h2
+{
+    font-size: 2.5rem;
+    padding: 1rem 3rem;
+    border-radius: 0.5rem;
+    border: 3px solid white;
+    color: white;
+    /* justify-self: stretch; */
+    cursor: pointer;
+}
+.home h2:hover
+{
+    background: white;
+    color: rgba(0, 0, 0, 0.8);
+    border-color: rgba(0, 0, 0, 0.8);
+    transition: 1s ease-in-out deeppink;
+    transform: translateY(-1rem)
+}
+.footer
+{
+    
+    grid-area: footer;
+    display: grid;
+    grid-template-rows:20fr 60fr 20fr;
+    grid-template-columns: 30fr repeat(4,10fr) 30fr;
+    grid-template-areas: ". . . . . ."
+                        ". icon1 icon2 icon3 icon4 ."
+                            ". . COPY COPY COPY .";
+    background: rgb(87, 76, 76);
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 1.2rem;
+    
+    color: white;
+    grid-gap: 5rem;
+}
+.copy
+{
+    grid-area: COPY;
+    /* background: red */
+}
+.same
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.icon1
+{
+    grid-area: icon1;
+    font-size: 3rem;
+    /* background: rgba(0, 0, 0, 0.2); */
+    padding: 2rem 0;
+}
+.icon2
+{
+    grid-area: icon2;
+    font-size: 3rem;
+    /* background: rgba(0, 0, 0, 0.2); */
+    padding: 2rem 0;
+}
+.icon3
+{
+    grid-area: icon3;
+    font-size: 3rem;
+    /* background: rgba(0, 0, 0, 0.2); */
+    padding: 2rem 0;
+}
+.icon4
+{
+    grid-area: icon4;
+    font-size: 3rem;
+    /* background: rgba(0, 0, 0, 0.2); */
+    padding: 2rem 0;
+}
+.about
+{
+    margin: 5rem;
+    grid-area: about;
+    /* background: peachpuff; */
+    display: grid;
+    grid-template-rows:  20fr 80fr ;
+    grid-template-columns: 30fr 40fr 30fr;
+    grid-template-areas: ". aboutHead ."
+                         ". details .";
+    font-family: 'Roboto Condensed', sans-serif;
+      color: rgb(87, 76, 76);
+      font-size: 2.2rem;          
+      margin: 8rem 0;
+
+}
+
+.aboutheading
+{
+ grid-area: aboutHead;  
+    font-size: 4rem;
+    /* margin-top: 3rem; */
+  
+}
+ .details
+
+ {
+    
+     grid-area: details;
+    line-height: 3rem;
+ }
+.details h2
+{
+     margin: 5rem 0rem;
+}
+
+.aboutheading h6
+{
+    transform: translateY(-0.8rem);
+}
+
+.skills
+{
+    grid-area: skills;
+    /* margin: 5rem; */
+    background: rgba(0, 0, 0, 0.88);
+    color: white;
+    text-transform: uppercase;
+    font-family: 'Roboto Condensed', sans-serif;
+
+   
+   display: grid;
+   grid-template-rows:    repeat(5,1fr);
+   grid-template-columns: 100fr;
+   grid-template-areas:  "myskills"
+                        "html"
+                        "css"
+                        "js"
+                        "React";
+font-size: 1.5rem;
+
+}
+.img
+{
+    grid-area: img;
+    
+    color: white;
+    background: url('download.jpg');
+    background-size: 100% 100%,cover;
+    text-transform: capitalize;
+    /* text-align: center; */
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 2.5rem
+}
+
+.html
+{
+    grid-area: html;
+    
+    
+}
+.react
+{
+    grid-area: React;
+}
+.html .skillbox .skill
+{
+    animation: html 2s linear forwards  2;
+}
+
+@keyframes html
+{
+    0%
+    {
+        width: 0%;
+        background: dodgerblue
+    }
+    100%
+    {
+        width: 90%;
+        background: dodgerblue
+    }
+}
+.css .skillbox .skill
+{
+    animation: css 2s  linear forwards 2;
+}
+@keyframes css
+{
+    0%
+    {
+        width: 0%;
+        background: dodgerblue
+    }
+    100%
+    {
+        width: 80%;
+        background: dodgerblue
+    }
+}
+.js .skillbox .skill
+{
+    animation: js 2s  forwards 2;
+}
+.react .skillbox .skill
+{
+    animation: react 2s  forwards 2;
+}
+@keyframes js
+{
+    0%
+    {
+        width: 0%;
+       
+    }
+    100%
+    {
+        width: 50%;
+        background: dodgerblue
+    }
+}
+@keyframes react
+{
+    0%
+    {
+        width: 0%;
+        background: dodgerblue
+    }
+    100%
+    {
+        width: 5%;
+        background: dodgerblue
+    }
+}
+.skillbox p
+{
+    margin:1rem 0;
+    font-weight: bold;
+   font-size: 2.5rem;
+}
+.skillbox
+{
+ padding-left: 10rem;
+}
+.skillbox p:nth-child(2)
+{
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+   margin-right: 5rem;
+   transform: translateY(-2.5rem)
+}
+.skill
+{
+    /* background: dodgerblue; */
+    margin-right: 5rem;
+    transform: translateY(-1.5rem);
+    padding: 0.8rem;
+    border-radius: 0.8rem;
+    border: 2px solid #fff;
+    /* position: relative; */
+    /* width: 50%; */
+}
+
+.css
+{
+    grid-area: css;
+    
+}
+
+.js
+{
+    grid-area: js;
+    
+}
+
+.myskills>h2
+{
+    margin-top: 4rem;
+    font-size: 3rem; 
+    text-align: center;
+}
+.contact
+{
+    grid-area: contact;
+  background: rgba(0, 0, 0, .8);
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 2rem;
+  color: #fff;
+  
+}
+.contact h2
+{
+    
+    transform: translate3d(0,-3rem,0);
+   
+}
+
+.contact input
+{
+    width: 28%;
+    margin-bottom: 3rem ;
+    height: 7%;
+    /* transform: translate3d(0,-2rem,0); */
+    padding-left: 1.5rem;
+    border-radius: 2rem;
+    border:2px solid  rgb(87, 76, 76);
+    background: transparent;
+    outline: none;
+}
+.contact button
+{
+    margin: 2.5rem;
+    padding: 1rem 5rem;
+    outline: none;
+    border-radius: 0.5rem;
+    /* color: #fff; */
+}
+.contact textarea
+{
+    border-radius: 2rem;
+    border:2px solid  rgb(87, 76, 76);
+    background: transparent;
+    padding: 1.5rem;
+    outline: none;
+    color: #fff;
+}
+
+
+.education
+{
+    
+    grid-area: education;
+    display: grid;
+    grid-template-rows:40fr 60fr;
+   
+    grid-template-areas: "myimage "
+                        "content"; 
+    margin: 8rem 0;                       
+}
+.image
+
+{
+
+    
+    grid-area: myimage;
+    background: url('books.jpg');
+    background-size: 100% 100%,cover;
+}
+
+.content
+{
+    grid-area: content;
+   display: grid;
+   grid-template-columns: repeat(auto-fit,minmax(35rem,1fr));
+   grid-gap: 5rem;
+    margin:8rem 0; 
+}
+.instituteicon img
+{
+    margin: 3rem 0;
+    width: 20vw;
+   
+}
+.contentdetails
+{
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    position: relative;
+}
+.instituteicon h2
+{
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 3rem;
+    background: black;
+    color: white;
+    align-self: flex-start;
+    justify-self: flex-start;
+    animation: autotype 3s ease-in-out infinite forwards;
+}
+@keyframes autotype
+{
+    0%
+    {
+       width: 0ch;
+    }
+    100%
+    {
+        width: 14ch;
+    }
+}
+.institutedetail 
+{
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 2rem;
+    
+}
+.institutedetail h1
+{
+    margin-top: 2rem;
+}
+.institutedetail p
+{
+    font-size: 2.5rem;
+}
+.projects
+{
+    grid-area: projects;
+    margin: 10rem 0;
+    
+    display: grid;
+    grid-template-columns: repeat(autofit,minmax(25rem,1fr));
+    background: url('myproject.jpg');
+    background-size: 100% 100%,cover;
+}
+.projects h2
+{
+    margin: 3rem 0;
+}
+.projects video
+{
+    margin: 3rem 0;
+    outline:none;
+}
+.slides
+{
+    
+    width: 90rem; 
+    height: 15rem;
+   display: grid;
+   transform: translateY(-25rem);
+   animation: slides 3s ease-in-out infinite forwards;
+   grid-template-rows: 1fr;
+   grid-template-columns: repeat(6,1fr);
+    position: relative;
+    border: 2px solid darkgrey;
+}
+@keyframes slides
+{
+    0%
+    {
+        left: 0;
+    }
+    100%
+    {
+        left: -200%;
+    }
+    
+}
+.slides img
+{
+    width: 100%;
+    height: 100%;
+
+    /* transform: translateX(10rem) */
+    /* justify-self: center;
+    align-self: center; */
+}
+.projects h2
+{
+    /* margin: 1rem 0; */
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 3rem;
+    text-align: center;
+    color: rgb(87, 76, 76);
+}
+
+@media only screen and (max-width:1100px)
+{
+  html
+  {
+      font-size: 52.5%;
+  }
+  
+}
+@media only screen and (max-width:1000px)
+{
+    html
+    {
+        font-size: 50%;
+    }
+}
+@media only screen and (max-width:900px)
+{
+    .container
+    {
+      
+       
+        display: grid;
+       
+        grid-template-rows:minmax(5rem,18vh)  minmax(90vh,min-content)  repeat(3,min-content) minmax(70vw,min-content) minmax(50vw,min-content) minmax(18vw,min-content);
+        grid-template-columns: minmax(0rem,1fr) repeat(4,minmax(22rem,min-content )) minmax(0rem,1fr) ;
+        grid-template-areas: "navbar navbar navbar navbar navbar navbar "
+                                "home home home home home home " 
+                                 "about about about about about about  "
+                                "img img img skills skills skills"
+                            
+                            "projects projects projects projects projects projects "
+                            "education education education education education education"
+                            "contact contact contact contact contact contact "
+                            "footer footer footer footer footer footer"
+                            
+        
+    /* position: relative; */
+    }
+    
+    .navbar
+    {
+        grid-area: navbar;
+        background: rgba(70, 67, 67, 0.95);
+        grid-template-rows: repeat(2,1fr);
+        grid-template-columns:  repeat(6,minmax(min-content,1fr)) ;
+        grid-template-areas: ". . Mine Mine . ."
+                            "Home About Skills Education Portfolio  Contact  ";
+        display: grid;
+        grid-column-gap: 5rem;
+       color: rgba(255, 255, 255, 0.8);
+       font-family: 'Roboto Condensed', sans-serif;
+        font-size: 1.8rem;
+        
+        /* position: sticky;
+        top: 0; */
+        
+    }
+    .Mine
+{
+    grid-area: Mine;
+    margin: 2rem 0;
+}
+.navbar a
+{
+display:flex;
+justify-content:center;
+align-items:center;
+/* bottom: 0%; */
+}
+
+
+.slides
+{
+    
+    width: 60rem; 
+    height: 15rem;
+   display: grid;
+   transform: translate3d(10rem,-30rem,0);
+   animation: slides 3s ease-in-out infinite forwards;
+   grid-template-rows: repeat(2,1fr);
+   grid-template-columns: repeat(3,1fr);
+    position: relative;
+    border: 2px solid darkgrey;
+}
+
+.Portfolio video
+{
+    width: 25rem;
+    height: 25rem;
+}
+}
+@media only screen and (max-width:800px)
+{
+    html
+    {
+        font-size: 45%;
+    }
+    .navbar
+    {
+        grid-area: navbar;
+        background: rgba(70, 67, 67, 0.95);
+        grid-template-rows: repeat(2,1fr);
+        grid-template-columns:  minmax(5rem,1fr) repeat(6,minmax(min-content,1fr)) minmax(5rem,1fr);
+        grid-template-areas: ". . . Mine  Mine . . . "
+                            " . Home About Skills Education Portfolio  Contact . ";
+        display: grid;
+        grid-column-gap: 5rem;
+       color: rgba(255, 255, 255, 0.8);
+       font-family: 'Roboto Condensed', sans-serif;
+        font-size: 1.8rem;
+        
+        /* position: sticky;
+        top: 0; */
+        
+    }
+    .Mine
+{
+    grid-area: Mine;
+    margin: 2rem 0;
+}
+.container
+{
+  
+   
+    display: grid;
+   
+    grid-template-rows:minmax(5rem,18vh)  minmax(90vh,min-content)  repeat(4,minmax(min-content,70vw)) minmax(70vw,min-content) minmax(50vw,min-content) minmax(18vw,min-content);
+    grid-template-columns: minmax(0rem,1fr) repeat(4,minmax(18rem,min-content )) minmax(0rem,1fr) ;
+    grid-template-areas: "navbar navbar navbar navbar navbar navbar "
+                            "home home home home home home " 
+                             "about about about about about about  "
+                            "img img img img img img"
+                            "skills skills skills skills skills skills"
+                        "projects projects projects projects projects projects "
+                        "education education education education education education"
+                        "contact contact contact contact contact contact "
+                        "footer footer footer footer footer footer"
+                        
+    
+/* position: relative; */
+}
+.img
+{
+    font-size: 2.2rem;
+}
+}
+    
+@media only screen and (max-width:700px)
+{
+    .container
+{
+  
+   
+    display: grid;
+   
+    grid-template-rows:minmax(5rem,18vh)  minmax(90vh,min-content)  repeat(4,minmax(min-content,70vw)) minmax(70vw,min-content) minmax(60vw,min-content) minmax(18vw,min-content);
+    grid-template-columns: minmax(0rem,1fr) repeat(4,minmax(16rem,min-content )) minmax(0rem,1fr) ;
+    grid-template-areas: "navbar navbar navbar navbar navbar navbar "
+                            "home home home home home home " 
+                             "about about about about about about  "
+                            "img img img img img img"
+                            "skills skills skills skills skills skills"
+                        "projects projects projects projects projects projects "
+                        "education education education education education education"
+                        "contact contact contact contact contact contact "
+                        "footer footer footer footer footer footer"
+                        
+    
+/* position: relative; */
+}
+.slides
+{
+    
+    width: 45rem; 
+    height: 25rem;
+   display: grid;
+   transform: translate3d(10rem,-40rem,0);
+   animation: slides 3s ease-in-out infinite forwards;
+   grid-template-rows: repeat(3,1fr);
+   grid-template-columns: repeat(2,1fr);
+    position: relative;
+    border: 2px solid darkgrey;
+}
+
+.Portfolio video
+{
+    width: 15rem;
+    height: 15rem;
+}
+.img
+{
+    font-size: 1.8rem;
+}
+}
+@media only screen and (max-width:585px)
+{
+    .container
+{
+  
+   
+    display: grid;
+   
+    grid-template-rows:minmax(5rem,18vh)  minmax(90vh,min-content)  repeat(4,minmax(min-content,75vw)) minmax(70vw,min-content) minmax(70vw,min-content) minmax(18vw,min-content);
+    grid-template-columns: minmax(0rem,1fr) repeat(4,minmax(14rem,min-content )) minmax(0rem,1fr) ;
+    grid-template-areas: "navbar navbar navbar navbar navbar navbar "
+                            "home home home home home home " 
+                             "about about about about about about  "
+                            "img img img img img img"
+                            "skills skills skills skills skills skills"
+                        "projects projects projects projects projects projects "
+                        "education education education education education education"
+                        "contact contact contact contact contact contact "
+                        "footer footer footer footer footer footer"
+                        
+    
+/* position: relative; */
+}
+html
+    {
+        font-size: 43%;
+    }
+    .contact
+{
+    grid-area: contact;
+  background: rgba(0, 0, 0, .8);
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 1.5rem;
+  color: #fff;
+  
+}
+.contact input
+{
+    width: 45%;
+    margin-bottom: 3rem ;
+    height: 7%;
+    font-size: 1.8rem;
+    /* transform: translate3d(0,-2rem,0); */
+    /* padding-left: 1.5rem; */
+    border-radius: 2rem;
+    border:2px solid  rgb(87, 76, 76);
+    background: transparent;
+    outline: none;
+}
+.contact textarea
+{
+    border-radius: 2rem;
+    border:2px solid  rgb(87, 76, 76);
+    background: transparent;
+    /* padding: 1.5rem; */
+    outline: none;
+    color: #fff;
+}
+}
+@media only screen and (max-width:475px)
+{
+    html
+    {
+        font-size: 40%;
+    }
+.navbar
+{
+    font-size: 1.4rem;
+}
+    .container
+{
+  
+   
+    display: grid;
+   
+    grid-template-rows:minmax(5rem,18vh)  minmax(90vh,min-content)  repeat(4,minmax(min-content,85vw)) minmax(70vw,min-content) minmax(80vw,min-content) minmax(18vw,min-content);
+    grid-template-columns: minmax(0rem,1fr) repeat(4,minmax(10rem,min-content )) minmax(0rem,1fr) ;
+    grid-template-areas: "navbar navbar navbar navbar navbar navbar "
+                            "home home home home home home " 
+                             "about about about about about about  "
+                            "img img img img img img"
+                            "skills skills skills skills skills skills"
+                        "projects projects projects projects projects projects "
+                        "education education education education education education"
+                        "contact contact contact contact contact contact "
+                        "footer footer footer footer footer footer"
+                        
+    
+/* position: relative; */
+}
+
+}
+@media only screen and (max-width:375px)
+{
+   html
+   {
+       font-size: 35%;
+   }
+.container
+{
+  
+   
+    display: grid;
+   
+    grid-template-rows:minmax(5rem,18vh)  minmax(90vh,min-content)  repeat(4,minmax(min-content,95vw)) minmax(70vw,min-content) minmax(90vw,min-content) minmax(18vw,min-content);
+    grid-template-columns: minmax(0rem,1fr) repeat(4,minmax(7rem,min-content )) minmax(0rem,1fr) ;
+    grid-template-areas: "navbar navbar navbar navbar navbar navbar "
+                            "home home home home home home " 
+                             "about about about about about about  "
+                            "img img img img img img"
+                            "skills skills skills skills skills skills"
+                        "projects projects projects projects projects projects "
+                        "education education education education education education"
+                        "contact contact contact contact contact contact "
+                        "footer footer footer footer footer footer"
+                        
+    
+/* position: relative; */
+}
+
+
+}
